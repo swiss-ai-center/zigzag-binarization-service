@@ -145,9 +145,6 @@ public class TaskService {
             currentTaskLock.lock();
             currentTask = newTask;
             currentTask.getTask().setStatus(ServiceTaskBase.TaskStatus.FETCHING);
-            logger.info("Got new task. Checking data_in for task: " + currentTask.getTask().getId().toString());
-            ArrayList<CompletableFuture<byte[]>> images = new ArrayList<>();
-
             logger.info("dataIn: " + currentTask.getTask().getDataIn().toString());
             for (String file : currentTask.getTask().getDataIn()) {
                 if (!file.endsWith(".jpeg") && !file.endsWith(".png") && !file.endsWith(".jpg"))
@@ -163,8 +160,6 @@ public class TaskService {
 
                 logger.info("Got image from s3 adding to taskImages :" + file);
                 currentTaskImages.put(file , image);
-                logger.info("Was it actually added? verifying that taskImages size is not 0, taskImages.size: " + currentTaskImages.size());
-
             }
         } catch ( Exception e) {
             logger.error(e.getMessage());

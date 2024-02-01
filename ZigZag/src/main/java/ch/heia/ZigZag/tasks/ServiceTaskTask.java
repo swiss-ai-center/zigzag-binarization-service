@@ -30,31 +30,11 @@ public class ServiceTaskTask {
         return id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
     public ArrayList<String> getDataIn() {
         return dataIn;
     }
 
     public ArrayList<String> getDataOut() {
         return dataOut;
-    }
-
-    public UUID getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(UUID serviceId) {
-        this.serviceId = serviceId;
-    }
-
-    public UUID getPipelineId() {
-        return pipelineExecutionID;
-    }
-
-    public void setPipelineId(UUID pipelineId) {
-        this.pipelineExecutionID = pipelineId;
     }
 }
