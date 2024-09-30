@@ -64,6 +64,8 @@
 			<groupId>sugarcube.imapro</groupId>
 			<artifactId>zigzag</artifactId>
 			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${pom.basedir}/lib/zigzag.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>software.amazon.awssdk</groupId>
@@ -138,6 +140,21 @@
 					</execution>
 				</executions>
 			</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<configuration>
+						<mainClass>ch.heia.ZigZag.ZigZagApplication</mainClass>
+						<layout>JAR</layout>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 		</plugins>
 	</build>
 
