@@ -70,6 +70,9 @@ jobs:
       - name: Test Java app
         working-directory: ./ZigZag
         run: |
+          # install and set JAVA_HOME to jdk-17
+          sudo apt-get install openjdk-17-jdk
+          export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
           mvn test
 
   release:
