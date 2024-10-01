@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:24-ea-17-bookworm
 COPY ZigZag/target/*dependencies.jar app.jar
 COPY ZigZag/src/main/resources/specification.json .
 COPY ZigZag/target/lib/* /lib/

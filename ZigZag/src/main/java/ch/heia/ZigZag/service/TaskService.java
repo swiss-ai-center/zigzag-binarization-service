@@ -29,10 +29,8 @@ import java.util.concurrent.locks.ReentrantLock;
 @Service
 public class TaskService {
 
-
-    // Change this to an env variable instead of hard coding url.
-    private static final String SERVICE_URL = "https://ps4-2023-grp2.kube.isc.heia-fr.ch/zigzag";
-    private static final String SERVICE_NAME = "zigzag";
+    private static final String SERVICE_URL = System.getenv("SERVICE_URL") != null ? System.getenv("SERVICE_URL") : "http://localhost:80";
+    private static final String SERVICE_NAME = "zigzag-binarization";
     private final BinarizationService binarizationService;
     private final StorageService storageService;
 
@@ -71,6 +69,8 @@ public class TaskService {
     public TaskService(StorageService storageService, BinarizationService binarizationService) {
         this.storageService = storageService;
         this.binarizationService = binarizationService;
+        logger.info(SERVICE_NAME + " service started");
+        logger.info("Service URL: " + SERVICE_URL);
     }
 
 

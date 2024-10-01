@@ -72,9 +72,11 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '17'
-          run: |
-            echo "JAVA_HOME_17=$JAVA_HOME" >> $GITHUB_ENV
-            echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
+
+      - name: Set JAVA_HOME environment variables
+        run: |
+          echo "JAVA_HOME_17=$JAVA_HOME" >> $GITHUB_ENV
+          echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
 
       - name: Test Java app
         working-directory: ./ZigZag
@@ -94,9 +96,11 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '17'
-          run: |
-            echo "JAVA_HOME_17=$JAVA_HOME" >> $GITHUB_ENV
-            echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
+
+      - name: Set JAVA_HOME environment variables
+        run: |
+          echo "JAVA_HOME_17=$JAVA_HOME" >> $GITHUB_ENV
+          echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
 
       - name: Compile Maven project
         working-directory: ./ZigZag
