@@ -104,7 +104,7 @@ jobs:
 
       - name: Compile Maven project
         working-directory: ./ZigZag
-        run: mvn clean package
+        run: mvn package
 
       - name: Build and push Docker image to GitHub
         id: build-and-push-docker-image-to-github

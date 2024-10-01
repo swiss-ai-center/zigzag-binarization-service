@@ -61,7 +61,7 @@
 			<version>2.7</version>
 		</dependency>
 		<dependency>
-			<groupId>sugarcube.imapro</groupId>
+			<groupId>sugarcube</groupId>
 			<artifactId>zigzag</artifactId>
 			<version>1.0.0</version>
 			<scope>system</scope>
