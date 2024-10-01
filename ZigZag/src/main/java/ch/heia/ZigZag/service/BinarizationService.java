@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import sugarcube.imapro.zigzag.ZigZagFilter;
+import sugarcube.zigzag.ZigZagFilter;
 import java.net.URI;
 import java.util.Arrays;
 
