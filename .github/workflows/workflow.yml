@@ -83,6 +83,10 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v4
 
+      - name: Compile Maven project
+        working-directory: ./ZigZag
+        run: mvn clean package
+        
       - name: Build and push Docker image to GitHub
         id: build-and-push-docker-image-to-github
         uses: swiss-ai-center/common-code/.github/actions/build-and-push-docker-image-to-github@main
